@@ -1,0 +1,14 @@
+class Solution:
+    def addDigits(self, num: int, sm = 0) -> int:
+        if num == 0 and sm > 9:
+            num = sm
+            return self.addDigits(num//10, sm = num % 10)
+        if num == 0: return sm
+        return self.addDigits(num//10, sm + num % 10)
+
+# Применение теории чисел
+class Solution:
+    def addDigits(self, num: int) -> int:
+        if num == 0:
+            return 0
+        return 1 + (num - 1) % 9
