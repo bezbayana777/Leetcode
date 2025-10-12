@@ -1,0 +1,17 @@
+# bruteforce solution (need to optimize)
+class Solution:
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        reshaped_matrix = [[0 for _ in range(c)] for _ in range(r)]
+        rows, cols = len(mat), len(mat[0])
+        if rows * cols != r * c:
+            return mat
+        all_elems = []
+        for i in range(rows):
+            for j in range(cols):
+                all_elems.append(mat[i][j])
+        k = 0
+        for i in range(r):
+            for j in range(c):
+                reshaped_matrix[i][j] = all_elems[k]
+                k+=1
+        return reshaped_matrix
