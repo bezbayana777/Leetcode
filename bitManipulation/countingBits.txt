@@ -1,0 +1,14 @@
+class Solution:
+    def countOne(self, num):
+        counter = 0
+        while num!=0:
+            if num % 2 == 1:
+                counter += 1
+            num//=2
+        return counter
+
+    def countBits(self, n: int) -> List[int]:
+        result = []
+        for i in range(n+1):
+            result.append(self.countOne(i))
+        return result
