@@ -1,0 +1,8 @@
+from itertools import permutations
+class Solution:
+    def totalNumbers(self, digits: List[int]) -> int:
+        unique = set()
+        for permutation in permutations(digits, r=3):
+            if permutation[2] % 2 == 0 and (permutation[0]!=0 or permutation[0]!=0 and permutation[1] != 0 or all(x !=0 for x in permutation )):
+                unique.add(permutation)
+        return len(unique)
