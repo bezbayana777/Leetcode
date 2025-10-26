@@ -1,0 +1,14 @@
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        cnt_one = 0
+        while n > 0:
+            ost = n % 2
+            if ost == 1:
+                cnt_one += 1
+            n //=2
+        return cnt_one
+
+
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        return bin(n)[2:].count('1')
