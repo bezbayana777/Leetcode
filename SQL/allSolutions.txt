@@ -22,3 +22,10 @@ WHERE author_id = viewer_id ORDER BY id;
 //Average Selling Price
 SELECT Prices.product_id, ROUND(IF(SUM(units)>0,SUM(price*units)/SUM(units),0),2) AS average_price FROM Prices LEFT JOIN UnitsSold ON Prices.product_id = UnitsSold.product_id AND purchase_date BETWEEN start_date AND end_date
 GROUP BY Prices.product_id;
+
+
+//Students and examinations
+
+SELECT Students.student_id,student_name,Subjects.subject_name, COUNT(Examinations.subject_name) AS attended_exams FROM Students
+CROSS JOIN Subjects LEFT JOIN Examinations ON Examinations.student_id = Students.student_id AND Subjects.subject_name = Examinations.subject_name 
+GROUP BY Students.student_id,student_name,Subjects.subject_name ORDER BY Students.student_id,student_name,Subjects.subject_name;
