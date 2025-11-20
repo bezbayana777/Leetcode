@@ -29,3 +29,10 @@ GROUP BY Prices.product_id;
 SELECT Students.student_id,student_name,Subjects.subject_name, COUNT(Examinations.subject_name) AS attended_exams FROM Students
 CROSS JOIN Subjects LEFT JOIN Examinations ON Examinations.student_id = Students.student_id AND Subjects.subject_name = Examinations.subject_name 
 GROUP BY Students.student_id,student_name,Subjects.subject_name ORDER BY Students.student_id,student_name,Subjects.subject_name;
+
+
+// Movie Rating
+
+(SELECT name AS results FROM Users INNER JOIN MovieRating ON Users.user_id = MovieRating.user_id GROUP BY MovieRating.user_id ORDER BY COUNT(MovieRating.user_id) DESC, name LIMIT 1)
+UNION ALL
+(SELECT title AS results FROM Movies INNER JOIN MovieRating ON Movies.movie_id = MovieRating.movie_id WHERE YEAR(created_at)=2020 AND MONTH(created_at)=2 GROUP BY title ORDER BY AVG(rating) DESC,title LIMIT 1);
