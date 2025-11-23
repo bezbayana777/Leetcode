@@ -1,0 +1,16 @@
+// 374 guess Number 
+
+class Solution:
+    def guessNumber(self, n: int) -> int:
+        left = 1
+        right = n
+        if guess(n) == 0: return n
+        while (left <= right):
+            mid = (left + right) // 2
+            attempt = guess(mid)
+            if attempt == -1:
+                right = mid
+            elif attempt == 1:
+                left = mid
+            if attempt == 0:
+                return mid
