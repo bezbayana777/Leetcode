@@ -14,3 +14,24 @@ class Solution:
                 left = mid
             if attempt == 0:
                 return mid
+
+// 35 Search Insert Position
+
+
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+        left,right = 0,len(nums)-1
+        while left<=right:
+            mid = (left+right)//2
+            elem = nums[mid]
+
+            if elem>target:
+                right = mid - 1
+            elif elem<target:
+                left = mid + 1
+            else:
+                return mid
+        return left
+
+
+        
