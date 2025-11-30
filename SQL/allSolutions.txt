@@ -45,3 +45,7 @@ Visits.visit_id = Transactions.visit_id WHERE transaction_id IS NULL GROUP BY cu
 
 // Invalid Tweets
 SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15;
+
+// 1378. Replace Employee ID With The Unique Identifier
+# Write your MySQL query statement below
+SELECT unique_id, name FROM Employees LEFT JOIN EmployeeUNI ON EmployeeUNI.id = Employees.id;
