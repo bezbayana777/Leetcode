@@ -7,5 +7,15 @@ class Solution:
                 if nums[i]+nums[j]==target:
                     return i,j
 
+// 389. Find the Difference
 
+from collections import Counter
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+        counterS = Counter(s)
+        counterT = Counter(t)
+        for key, value in counterT.items():
+            if value != counterS[key]:
+                return key
+        
         
