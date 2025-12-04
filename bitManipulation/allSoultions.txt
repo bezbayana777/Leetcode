@@ -1,0 +1,14 @@
+// 461. Hamming Distance
+
+class Solution:
+    def hammingDistance(self, x: int, y: int) -> int:
+        binX = bin(x)[2:]
+        binY = bin(y)[2:]
+        width = max(len(binX), len(binY))
+        binX = binX.zfill(width)
+        binY = binY.zfill(width)
+        diff = 0
+        for i in range(width):
+            if binX[i] != binY[i]:
+                diff += 1
+        return diff
