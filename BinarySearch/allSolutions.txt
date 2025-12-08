@@ -51,4 +51,19 @@ class Solution:
             elif (mid ** 2 < x):
                 left = mid + 1
         return right
-        
+
+// 704. Binary Search
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        st = 0
+        end = len(nums) - 1
+        while st <= end:
+            mid = (st + end) // 2
+            curr = nums[mid]
+            if curr == target:
+                return mid
+            elif curr > target:
+                end = mid - 1
+            else:
+                st = mid + 1
+        return -1
