@@ -49,3 +49,10 @@ SELECT tweet_id FROM Tweets WHERE LENGTH(content)>15;
 // 1378. Replace Employee ID With The Unique Identifier
 # Write your MySQL query statement below
 SELECT unique_id, name FROM Employees LEFT JOIN EmployeeUNI ON EmployeeUNI.id = Employees.id;
+
+
+
+// 182. Duplicate Emails
+SELECT email FROM Person
+GROUP BY email
+HAVING COUNT(email) > 1;
