@@ -31,6 +31,13 @@ CROSS JOIN Subjects LEFT JOIN Examinations ON Examinations.student_id = Students
 GROUP BY Students.student_id,student_name,Subjects.subject_name ORDER BY Students.student_id,student_name,Subjects.subject_name;
 
 
+// 183. Customers Who Never Order
+
+SELECT name AS Customers FROM Customers
+LEFT JOIN Orders ON Customers.id = Orders.customerId
+WHERE Orders.customerId IS NULL;
+
+
 // Movie Rating
 
 (SELECT name AS results FROM Users INNER JOIN MovieRating ON Users.user_id = MovieRating.user_id GROUP BY MovieRating.user_id ORDER BY COUNT(MovieRating.user_id) DESC, name LIMIT 1)
