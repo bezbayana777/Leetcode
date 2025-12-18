@@ -69,3 +69,9 @@ HAVING COUNT(email) > 1;
 SELECT e1.name AS Employee FROM Employee e1
 JOIN Employee e2 ON e1.managerId = e2.id
 WHERE e1.salary > e2.salary;
+
+
+511. Game Play Analys
+
+SELECT player_id, MIN(event_date) AS first_login FROM Activity
+GROUP BY player_id;
