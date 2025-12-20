@@ -29,3 +29,10 @@ class Solution:
             base7Num = str(num%7) + base7Num
             num//=7
         return base7Num if isPos else '-' + base7Num
+
+709. To Lower Case
+
+class Solution:
+    def toLowerCase(self, s: str) -> str:
+        return s.lower()
+        
