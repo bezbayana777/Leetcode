@@ -36,3 +36,12 @@ class Solution:
     def toLowerCase(self, s: str) -> str:
         return s.lower()
         
+3110. Score of a String
+class Solution:
+    def scoreOfString(self, s: str) -> int:
+        if len(s) == 1: return ord(s[0])
+        sm = 0
+        for i in range(1, len(s)):
+            sm += abs(ord(s[i-1]) - ord(s[i]))
+        return sm
+        
