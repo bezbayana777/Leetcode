@@ -45,3 +45,12 @@ class Solution:
             sm += abs(ord(s[i-1]) - ord(s[i]))
         return sm
         
+2942. Find Words Containing Character
+class Solution:
+    def findWordsContaining(self, words: List[str], x: str) -> List[int]:
+        indexes_list = []
+        for ind, word in enumerate(words):
+            if x in word:
+                indexes_list.append(ind)
+        return indexes_list
+        
