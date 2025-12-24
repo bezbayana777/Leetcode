@@ -1,0 +1,10 @@
+Q1. Concatenation of Array
+
+class Solution:
+    def getConcatenation(self, nums: List[int]) -> List[int]:
+        n = len(nums)
+        double_nums = [0] * (2 * n)
+        for i in range(len(nums)):
+            double_nums[i] = nums[i]
+            double_nums[i + n] = nums[i]
+        return double_nums
